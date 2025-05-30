@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
   });
 });
 
-// Update inventory item
+// Update inventory item 
 router.put('/:id', (req, res) => {
   const { item_type, brand, model, assigned_to } = req.body;
   db.query('UPDATE inventory SET ? WHERE id = ?', [{ item_type, brand, model, assigned_to }, req.params.id], (err) => {
@@ -28,7 +28,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-// Delete inventory item
+// Delete inventory item 
 router.delete('/:id', (req, res) => {
   db.query('DELETE FROM inventory WHERE id = ?', [req.params.id], (err) => {
     if (err) return res.status(500).json(err);

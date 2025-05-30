@@ -4,7 +4,7 @@ const db = require('../db');
 
 // Get all employees
 router.get('/', (req, res) => {
-  db.query('SELECT * FROM employees', (err, results) => {
+  db.query('SELECT * FROM employees_all_data', (err, results) => {
     if (err) return res.status(500).json(err);
     console.log("results",results);
     
