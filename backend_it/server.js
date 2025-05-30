@@ -15,7 +15,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("✅ Backend is running");
 });
-console.log("employeeRoutes",employeeRoutes);
+
 
 // app.use('/api/employees', require('./routes/employees'));
 app.use("/api/employees", employeeRoutes);
