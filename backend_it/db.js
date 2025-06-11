@@ -8,10 +8,12 @@ const db = mysql.createConnection({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 });
-// console.log("sandeep dd",db);
 
 db.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    console.error('❌ MySQL connection error:', err.message);
+    process.exit(1); // Exit the app on DB connection failure
+  }
   console.log('✅ MySQL Connected');
 });
 
