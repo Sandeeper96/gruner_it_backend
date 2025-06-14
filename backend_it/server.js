@@ -3,7 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const employeeRoutes = require("./routes/employees");
 const allocationInventoryRoutes = require('./routes/allocation_inventory');
-
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/employees", employeeRoutes); 
 app.use('/api/inventory', require('./routes/inventory'));
 app.use('/api/alloction_inventory', allocationInventoryRoutes);
-
+app.use('/api/auth', authRoutes); // 👈 add this line
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,() => {
